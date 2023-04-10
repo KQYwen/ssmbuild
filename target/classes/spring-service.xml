@@ -36,8 +36,8 @@
         </tx:attributes>
     </tx:advice>
     <!--配置事务切入-->
-<!--    <aop:config>-->
-<!--        <aop:pointcut id="txPointCut" expression="execution(* com.wen.dao.*.*(..))"/>-->
-<!--        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>-->
-<!--    </aop:config>-->
+    <aop:config>
+        <aop:pointcut id="txPointCut" expression="execution(* com.wen.dao.*.*(..))"/>
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointCut"/>
+    </aop:config>
 </beans>

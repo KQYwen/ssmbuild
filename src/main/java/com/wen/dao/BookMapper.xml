@@ -33,7 +33,7 @@
 
     <!--    通过书名查找书籍-->
     <select id="queryBookByName" resultType="Books">
-        SELECT * from books where bookName=#{bookName}
+        SELECT * from books where bookName = #{bookName}
     </select>
 
 </mapper>

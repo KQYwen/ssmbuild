@@ -67,17 +67,18 @@ public class BookController {
         return "redirect:/book/allBook";
     }
 
-    //查询书籍
-//    @RequestMapping(value = "/queryBook")
-//    public String queryBook(String queryBookName,Model model){
-//        Books books = bookService.queryBookByName(queryBookName);
-//        List<Books> list = new ArrayList<Books>();
-//        list.add(books);
-//        if (books == null){
-//            list = bookService.queryAllBook();
-//            model.addAttribute("error","未查到");
-//        }
-//        model.addAttribute("list",list);
-//        return "allBook";
-//    }
+    @RequestMapping("/queryBook")
+    public String queryBook(String queryBookName,Model model){
+        Books books = bookService.queryBookByName(queryBookName);
+        System.err.println("books>--"+books);
+        List<Books> list = new ArrayList<Books>();
+        if (books == null){
+            list = bookService.queryAllBook();
+            model.addAttribute("error","未查到");
+        }
+        list.add(books);
+        PageInfo pageInfo = new PageInfo<>(list,5);
+        model.addAttribute("pageInfo",pageInfo);
+        return "allbook";
+    }
 }

@@ -20,7 +20,6 @@
         </plugin>
     </plugins>
     <mappers>
-        <!-- <mapper class="com.dao.BookMapper"/> 也一样-->
-        <mapper resource="com/wen/dao/BookMapper.xml"/>
+        <mapper class="com.wen.dao.BookMapper"/>
     </mappers>
 </configuration>
